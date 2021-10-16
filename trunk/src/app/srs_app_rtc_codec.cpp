@@ -241,7 +241,7 @@ srs_error_t SrsAudioTranscoder::init_enc(SrsAudioCodecId dst_codec, int dst_chan
     enc_->time_base.num = 1; enc_->time_base.den = 1000; // {1, 1000}
     if (dst_codec == SrsAudioCodecIdOpus) {
         //TODO: for more level setting
-        enc_->compression_level = 1;
+        enc_->compression_level = 8;
         enc_->strict_std_compliance = FF_COMPLIANCE_EXPERIMENTAL;
     } else if (dst_codec == SrsAudioCodecIdAAC) {
         enc_->strict_std_compliance = FF_COMPLIANCE_EXPERIMENTAL;
