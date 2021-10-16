@@ -237,7 +237,7 @@ srs_error_t SrsAudioTranscoder::init_enc(SrsAudioCodecId dst_codec, int dst_chan
     enc_->channels = dst_channels;
     enc_->channel_layout = av_get_default_channel_layout(dst_channels);
     // enc_->bit_rate = dst_bit_rate;
-    enc_->bit_rate = 192;
+    enc_->bit_rate = 192 * 1000;
     enc_->sample_fmt = codec->sample_fmts[0];
     enc_->time_base.num = 1; enc_->time_base.den = 1000; // {1, 1000}
     if (dst_codec == SrsAudioCodecIdOpus) {
